@@ -5,7 +5,8 @@
      <h1> ?מהו אסטרואיד </h1>
     </div>
 
-    <div id="asteroid-graphic"></div>
+    <!-- <div id="asteroid-graphic"></div> -->
+    <img id="asteroid-graphic" src="src/assets/mymedia/asteroid.png" alt="graphic" >
     <div id="explanation">אסטרואיד הוא יצור מרושע שמטרתו להשמיד את כדור הארץ ואנחנו בברוגז איתו ממש. 
         הוא נראה כמו כדור עגול כזה אבל לא חלק כי יש לו בליטות מכוערות שנראות כמו חצ׳קונים.
 </div>
@@ -54,16 +55,14 @@ export default {
 }
 
 #asteroid-graphic {
-    width: 70%;
-    height: 32%;
+    width: 60%;
+    height: auto;
     background-image: url(src/assets/mymedia/asteroid.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: absolute;
     top: 23%;
     right: 1%;
-
-    /* animation: bigAndSmallAnimation 2s ease-in-out infinite; */
     animation-name: spin;
     animation-duration: 5000ms;
     animation-iteration-count: infinite;
@@ -77,18 +76,18 @@ export default {
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     border-radius: 15px;
     width: 67%;
-    height: 35%;
-    top: 45%;
+    height: 40%;
+    top: 40%;
     right: 30%;
     color: white;
     font-size: large;
     text-align: center;
-    padding-top: 24%;
+    padding-top: 20%;
     padding-left: 5%;
     padding-right: 5%;
     z-index: -2;
     box-sizing: border-box;
-    line-height: 150%;
+    line-height: 130%;
 }
 
 #next-button {
@@ -98,7 +97,7 @@ export default {
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     border-radius: 10px;
     color: white;
-    line-height: 2.5rem;
+    line-height: 2rem;
     text-align: center;
     font-size: large;
     position: absolute;

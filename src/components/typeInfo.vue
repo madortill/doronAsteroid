@@ -3,21 +3,21 @@
   <div id="transperant-background">
     <div id="asteroid-type" 
     :class="{
-      'baby': asteroidType === 0,
-      'teen': asteroidType === 1,
-      'adult': asteroidType === 2
+      'baby': asteroidType === '0',
+      'teen': asteroidType === '1',
+      'adult': asteroidType === '2'
     }">
 
       <div class="textInfoAsteroid">
             <h1 class="typeTitle"> {{ asteroidTypeInfo[asteroidType].title }} </h1>
             <p class="infoText"> {{ asteroidTypeInfo[asteroidType].text }} </p>
-        </div>
+      </div>
 
-
-
-        
+      <!-- <img id="closeButton"  src="src/assets/mymedia/Xbutton.png" alt="closeButton" @click="close"> -->
+      <div id="closeButton" @click="close">סגור</div>
+ 
     </div>
-    </div>
+  </div>
 </template>
 
 <script>
@@ -44,7 +44,9 @@ export default {
     };
   },
   methods: {
- 
+    close() {
+      this.$emit('close-type');
+    }
 },
 }
 </script>
@@ -70,11 +72,44 @@ export default {
   position: absolute;
   line-height: 2rem;
   padding-top: 15%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: 1.5rem;
+}
+
+.infoText {
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .baby {
-  top: 35%;
+  top: 42%;
   left: 10%;
+}
+
+.teen {
+  top: 59%;
+  left: 23%;
+}
+
+.adult {
+  top: 34%;
+  left: 2%;
+}
+
+#closeButton {
+  width: 20%;
+  height: 14%;
+  background-color: white;
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  border-radius: 10px;
+  color: rgb(18,45,70);
+  text-align: center;
+  font-size: large;
 }
 
 

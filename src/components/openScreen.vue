@@ -46,6 +46,7 @@ export default {
     text-align: center;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     color: white;
+    line-height: 1.5rem;
 }
 
 h3 {

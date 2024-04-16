@@ -4,6 +4,9 @@
     <open-screen v-if ="page === 0" @next-page = "nextPage"></open-screen>
     <asteroid-definition v-if ="page === 1" @next-page = "nextPage"></asteroid-definition>
     <asteroid-types v-if ="page === 2" @next-page = "nextPage"></asteroid-types>
+    <asteroid-explosion v-if ="page === 3" @next-page = "nextPage"></asteroid-explosion>
+    <game v-if ="page === 4" @next-page = "nextPage"></game>
+    <end-screen v-if ="page >= 5" @next-page = "nextPage"></end-screen>
 
   </div>
 
@@ -13,6 +16,9 @@
 import openScreen from './components/openScreen.vue';
 import asteroidDefinition from './components/asteroidDefinition.vue';
 import asteroidTypes from './components/asteroidTypes.vue';
+import asteroidExplosion from './components/asteroidExplosion.vue';
+import game from './components/game.vue';
+import endScreen from './components/endScreen.vue';
 
 export default {
 
@@ -21,6 +27,9 @@ export default {
     openScreen,
     asteroidDefinition,
     asteroidTypes,
+    asteroidExplosion,
+    game,
+    endScreen,
   },
 
   data() {
@@ -32,8 +41,8 @@ export default {
   methods: {
     nextPage() {
       this.page++;
-      console.log(this.page);
     },
+
     // prevPage() {
     //   this.page--;
     // }, 

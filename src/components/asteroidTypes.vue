@@ -8,15 +8,12 @@
     </div>
     <h3> לחצו על כל אסטרואיד כדי לגלות את סוגו </h3>
     </div>
-]
-    
-    <div id="baby-asteroid" @click="openType" :class="{'animation': !showType}"></div>
-    <div id="teen-asteroid" @click="openType" :class="{'animation': !showType}"></div>
-    <div id="adult-asteroid" @click="openType" :class="{'animation': !showType}"></div>
 
-    <type-info v-if="showType" :asteroidType = "asteroidType"></type-info>
+    <div v-for="num in 3" :key="num - 1" :id="num - 1" @click="openType" :class="[showType ? '' : 'animation', `asteroid${num - 1}`, (num - 1) === Number(asteroidType) ? 'high-z-index': '']" ></div>
 
-    <div id="next-button" v-if="btnClick >= 3 && !showInfo" @click="next">המשך</div>
+    <type-info v-if="showType" :asteroidType = "asteroidType" @close-type="closeType"></type-info>
+
+    <div id="next-button" v-if="visited.length === 3" @click="next">המשך</div>
 
    </div>
   </template>
@@ -36,23 +33,23 @@ export default {
         showType: false,
         asteroidType: '',
         btnClick: 0,
+        visited: []
     };
   },
   methods: {
     openType(event) {
-
-
-        if(event.target.id === "baby-asteroid") {
-            this.asteroidType = 0;
-            this.btnClick++;
-        } else if(event.target.id === "teen-asteroid"){
-            this.asteroidType = 1;
-            this.btnClick++;
-        } else if(event.target.id === "adult-asteroid"){
-            this.asteroidType = 2;
-            this.btnClick++;
+        this.asteroidType = event.target.id; 
+        // event.target.id.classList.add("")
+        this.btnClick++;
+        this.showType = !this.showType;
+        if(!this.visited.includes(event.target.id)) {
+            this.visited.push(event.target.id);
         }
-        this.showType = true;
+        
+    },
+
+    closeType() {
+        this.showType = false;
     },
 
     next() {
@@ -100,8 +97,9 @@ h3 {
     margin-bottom: 0;
 }
 
-#baby-asteroid {
-    width: 45%;
+.asteroid0 {
+    animation-duration: 1.5s;
+    width: 40%;
     height: 20%;
     background-image: url(src/assets/mymedia/babyAsteroid.png);
     background-repeat: no-repeat;
@@ -109,35 +107,37 @@ h3 {
     position: absolute;
     top: 27%;
     right: 1%;
-    animation: floatAnimation 1.5s ease-in-out infinite;
+    /* animation: floatAnimation 1.5s ease-in-out infinite; */
 }
 
-/* .animation {
-    animation: floatAnimation 1.5s ease-in-out infinite;
-} */
+.animation {
+    animation-name: floatAnimation;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
 
-#teen-asteroid {
-    width: 65%;
+.asteroid1 {
+    width: 60%;
     height: 30%;
     background-image: url(src/assets/mymedia/teenAsteroid.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: absolute;
     top: 33%;
-    /* transform: rotate(180deg); */
-    animation: floatAnimation var(--duration) ease-in-out infinite reverse;
+    animation-duration: 2s;
+    animation-direction: reverse;
 }
 
-#adult-asteroid {
-    width: 80%;
+.asteroid2 {
+    width: 75%;
     height: 35%;
     background-image: url(src/assets/mymedia/adultAsteroid.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: absolute;
     top: 55%;
-    right: 0%;
-    animation: floatAnimation 3s ease-in-out infinite;
+    right: -2%;
+    animation-duration: 3s;
 }
 
 @keyframes floatAnimation {
@@ -161,12 +161,34 @@ h3 {
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     border-radius: 10px;
     color: white;
-    line-height: 2.5rem;
+    line-height: 2rem;
     text-align: center;
     font-size: large;
     position: absolute;
     top: 83%;
     left: 2%;
+}
+
+.high-z-index {
+    z-index: 10;
+}
+
+.on-click-animation {
+    animation: upAnimation 0.5s ease-in-out;
+}
+
+@keyframes upAnimation {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 </style>
