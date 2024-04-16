@@ -13,9 +13,9 @@
 
         </div>
 
-        <img class="asteroid0" src="src/assets/mymedia/babyAsteroid.png" alt="asteroid0" >
-        <img class="asteroid1" src="src/assets/mymedia/teenAsteroid.png" alt="asteroid1" >
-        <img class="asteroid2" src="src/assets/mymedia/adultAsteroid.png" alt="asteroid2" >
+        <img class="asteroid0" src="@/assets/mymedia/babyAsteroid.png" alt="asteroid0" >
+        <img class="asteroid1" src="@/assets/mymedia/teenAsteroid.png" alt="asteroid1" >
+        <img class="asteroid2" src="@/assets/mymedia/adultAsteroid.png" alt="asteroid2" >
 
 
 

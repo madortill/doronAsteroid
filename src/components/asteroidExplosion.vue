@@ -29,7 +29,7 @@
             </div>
         </div>
 
-        <img id="burningAsteroidGraphic"  src="src/assets/mymedia/burningAsteroid.png" alt="graphic" >
+        <img id="burningAsteroidGraphic"  src="@/assets/mymedia/burningAsteroid.png" alt="graphic" >
 
         <h4> הקליקו על הכרטיס כדי להפוך אותו </h4>
 

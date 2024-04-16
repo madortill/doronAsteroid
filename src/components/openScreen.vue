@@ -64,7 +64,7 @@ h3 {
     position: absolute;
     top: 33vh;
     left: 12vw;
-    background-image: url(src/assets/mymedia/burningAsteroid.png);
+    background-image: url(@/assets/mymedia/burningAsteroid.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;   
 }

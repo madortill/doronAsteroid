@@ -315,7 +315,7 @@ export default {
     width: 50px;
     height: 50px;
     position: absolute;
-    background-image: url(src/assets/mymedia/spaceShip.png);
+    background-image: url(@/assets/mymedia/spaceShip.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     transition: left 0.2s;
@@ -325,7 +325,7 @@ export default {
     width: 50px;
     height: 50px;
     position: absolute;
-    background-image: url(src/assets/mymedia/burningAsteroid.png);
+    background-image: url(@/assets/mymedia/burningAsteroid.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }

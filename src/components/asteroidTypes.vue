@@ -101,7 +101,7 @@ h3 {
     animation-duration: 1.5s;
     width: 40%;
     height: 20%;
-    background-image: url(src/assets/mymedia/babyAsteroid.png);
+    background-image: url(@/assets/mymedia/babyAsteroid.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: absolute;
@@ -119,7 +119,7 @@ h3 {
 .asteroid1 {
     width: 60%;
     height: 30%;
-    background-image: url(src/assets/mymedia/teenAsteroid.png);
+    background-image: url(@/assets/mymedia/teenAsteroid.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: absolute;
@@ -131,7 +131,7 @@ h3 {
 .asteroid2 {
     width: 75%;
     height: 35%;
-    background-image: url(src/assets/mymedia/adultAsteroid.png);
+    background-image: url(@/assets/mymedia/adultAsteroid.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: absolute;

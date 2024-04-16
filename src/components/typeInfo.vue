@@ -13,7 +13,7 @@
             <p class="infoText"> {{ asteroidTypeInfo[asteroidType].text }} </p>
       </div>
 
-      <!-- <img id="closeButton"  src="src/assets/mymedia/Xbutton.png" alt="closeButton" @click="close"> -->
+      <!-- <img id="closeButton"  src="@/assets/mymedia/Xbutton.png" alt="closeButton" @click="close"> -->
       <div id="closeButton" @click="close">סגור</div>
  
     </div>

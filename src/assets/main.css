@@ -6,24 +6,24 @@ body {
 }
 
 body {
-    background-image: url(src/assets/mymedia/background.png);
+    background-image: url(@/assets/mymedia/background.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
 @font-face {
     font-family: assistantBold;
-    src: url(src/assets/fonts/Assistant-Bold.ttf);
+    src: url(@/assets/fonts/Assistant-Bold.ttf);
 }
 
 @font-face {
     font-family: assistantRegular;
-    src: url(src/assets/fonts/Assistant-Regular.ttf);
+    src: url(@/assets/fonts/Assistant-Regular.ttf);
 }
 
 @font-face {
     font-family: assistantLight;
-    src: url(src/assets/fonts/Assistant-Light.ttf);
+    src: url(@/assets/fonts/Assistant-Light.ttf);
 }
 
 

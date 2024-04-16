@@ -6,7 +6,7 @@
     </div>
 
     <!-- <div id="asteroid-graphic"></div> -->
-    <img id="asteroid-graphic" src="src/assets/mymedia/asteroid.png" alt="graphic" >
+    <img id="asteroid-graphic" src="@/assets/mymedia/asteroid.png" alt="graphic" >
     <div id="explanation">אסטרואיד הוא יצור מרושע שמטרתו להשמיד את כדור הארץ ואנחנו בברוגז איתו ממש. 
         הוא נראה כמו כדור עגול כזה אבל לא חלק כי יש לו בליטות מכוערות שנראות כמו חצ׳קונים.
 </div>
@@ -57,7 +57,7 @@ export default {
 #asteroid-graphic {
     width: 60%;
     height: auto;
-    background-image: url(src/assets/mymedia/asteroid.png);
+    background-image: url(@/assets/mymedia/asteroid.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: absolute;
