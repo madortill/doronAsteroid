@@ -38,15 +38,16 @@ export default {
 #start-title {
     width: 90vw;
     height: 10vh;
-    border-radius: 15px;
-    background-color: rgb(33,84,131);
+    /* border-radius: 15px; */
+    /* background-color: rgb(33,84,131);  */
     position: absolute;
     top: 20vh;
     left: 6vw;
     text-align: center;
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    color: white;
+    /* box-shadow: 10px 10px 5px #000000bf; */
+    color: #fff;
     line-height: 1.5rem;
+    text-shadow: 8px 8px 5px #000000bf;
 }
 
 h3 {
