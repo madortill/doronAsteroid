@@ -55,7 +55,7 @@ export default {
 
 #transperant-background {
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   background-color: rgba(255, 255, 255, 0.644);
   z-index: 3;
   position: relative;

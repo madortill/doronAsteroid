@@ -43,7 +43,7 @@ export default {
     width: 90vw;
     height: 8vh;
     border-radius: 15px;
-    background-color: rgb(33,84,131);
+    background-color: rgb(33 84 131 / 82%);
     position: absolute;
     top: 14vh;
     left: 26vw;
@@ -72,7 +72,7 @@ export default {
 #explanation {
     direction: rtl;
     position: absolute;
-    background-color: rgb(118,113,113);
+    background-color: rgb(118 113 113 / 65%);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     border-radius: 15px;
     width: 67%;

@@ -5,6 +5,7 @@
         <div v-for="(asteroid, index) in asteroids" :key="index" class="asteroid"
             :style="{ left: asteroid.x + 'px', top: asteroid.y + 'px' }"></div>
 
+        <div id="explosion" v-if="explosion"></div>
         <div id="message" v-if="gameOverMessage"> {{ `Game Over! Your score: ${this.score}` }} 
         <button @click="startGame">שחק שוב</button>
         </div>
@@ -17,13 +18,15 @@ export default {
     name: "game",
     data() {
         return {
-            shipPosition: { x: 250, y: 350 },
+            shipPosition: { x: 250, y: 400 },
             asteroids: [],
             gameInterval: null,
             score: 0,
             movingLeft: false,
             movingRight: false,
+            explosion:false,
             gameOverMessage: false,
+            
         };
     },
     created() {
@@ -32,6 +35,7 @@ export default {
     },
     methods: {
         startGame() {
+            this.explosion = false;
             this.gameOverMessage = false;
             this.score = 0;
             this.gameInterval = setInterval(() => {
@@ -42,7 +46,7 @@ export default {
         moveAsteroids() {
             this.asteroids.forEach(asteroid => {
                 asteroid.y += 5;
-                if (asteroid.y > 400) {
+                if (asteroid.y > 500) {
                     this.removeAsteroid(asteroid);
                     this.score += 10;
                 }
@@ -80,7 +84,14 @@ export default {
         },
         gameOver() {
             clearInterval(this.gameInterval);
-            this.gameOverMessage = true;
+            this.explosion = true;
+            // this.document.getElementById('ship').style.backgroundImage = "url('src/assets/mymedia/giphy.gif')";
+
+            setTimeout(()=> {
+                this.explosion = false;
+                this.gameOverMessage = true;
+            }, 1200);
+            // this.gameOverMessage = true;
             this.asteroids = [];
             this.shipPosition = { x: 250, y: 350 };
             this.asteroids = [];
@@ -142,9 +153,18 @@ export default {
     width: 50px;
     height: 50px;
     position: absolute;
-    background-image: url(@/assets/mymedia/burningAsteroid.png);
+    background-image: url(@/assets/mymedia/babyAsteroid.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
+}
+
+#explosion {
+    width: 100vw;
+    height: 80vh;
+    background-image: url(@/assets/mymedia/giphy.gif);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 5;
 }
 
 #message {
@@ -163,6 +183,13 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+button {
+    border: none;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    height: 10%;
 }
 
 #next-button {
@@ -198,3 +225,237 @@ export default {
     }
 }
 </style>
+  
+
+   
+   
+
+   <!-- <template>
+    <div id="game">
+      
+    
+        <div class="grid-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>  
+  <div>7</div>
+  <div>8</div>
+  <div>9</div>
+  <div>10</div>
+  <div>11</div>
+  <div>12</div>
+  <div>13</div>
+  <div>14</div>
+  <div>15</div>
+  <div>16</div>
+        </div>
+      
+
+        <div id="next-button" v-if="gameOverMessage" @click="next">לסיום הלומדה</div>
+    </div>
+  </template>
+
+
+<script>
+export default {
+    name: "game",
+    data() {
+        return {
+            gameOverMessage:true,
+           
+        };
+    },
+  
+    methods: {
+
+
+
+
+        next() {
+            document.getElementById("next-button").classList.add("on-click-animation");
+            setTimeout(() => {
+                this.$emit('next-page');
+            }, 700);
+        }
+    },
+}
+
+    </script>
+
+  <style scoped>
+
+  #game {
+    width:100vw;
+    height: 100vh;
+  }
+
+  .grid-container {
+    
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  gap: 5%;
+  padding: 10%;
+  justify-content: center;
+  margin-top: 15%;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+#next-button {
+    width: 40%;
+    height: 5%;
+    background-color: rgb(197, 90, 17);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    color: white;
+    line-height: 2rem;
+    text-align: center;
+    font-size: large;
+    position: absolute;
+    top: 80%;
+    left: 25%;
+}
+
+.on-click-animation {
+    animation: upAnimation 0.5s ease-in-out;
+}
+
+@keyframes upAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+  </style> -->
+
+
+
+<!-- 
+  <template>
+    <div id="app">
+      <div class="grid">
+        <div v-for="row in gridRows" :key="row" class="row">
+          <div v-for="col in gridCols" :key="col" class="cell" ></div>
+        </div>
+
+        <div class="player"></div>
+      
+      <div id="next-button" v-if="gameOverMessage" @click="next">לסיום הלומדה</div>
+    </div>
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    name: "game",
+    data() {
+      return {
+        gridRows: 8,
+        gridCols: 7,
+        
+        gameOverMessage: true,
+      };
+    },
+    methods: {
+      
+      next() {
+        document.getElementById("next-button").classList.add("on-click-animation");
+        setTimeout(() => {
+          this.$emit('next-page');
+        }, 700);
+      }
+    }
+  };
+  </script>
+  
+  <style scoped>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(7, 50px);
+    grid-template-rows: repeat(8, 50px);
+    gap: 1%;
+    justify-content: center;
+    margin-top: 15%;
+  }
+  
+  .cell {
+    border: 1px solid black;
+  }
+  
+  .asteroid {
+    background-image: url('@/assets/mymedia/babyAsteroid.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .explosion {
+    background-image: url('@/assets/mymedia/burningAsteroid.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .player {
+    background-image: url('@/assets/mymedia/spaceShip.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    
+  }
+
+
+
+
+ 
+  
+  #next-button {
+    width: 40%;
+    height: 5%;
+    background-color: rgb(197, 90, 17);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    color: white;
+    line-height: 2rem;
+    text-align: center;
+    font-size: large;
+    position: absolute;
+    top: 80%;
+    left: 25%;
+  }
+  
+  .on-click-animation {
+    animation: upAnimation 0.5s ease-in-out;
+  }
+  
+  @keyframes upAnimation {
+    0% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(-5px);
+    }
+  
+    100% {
+      transform: translateY(0);
+    }
+  }
+  </style> -->
+  
+  

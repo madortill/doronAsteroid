@@ -77,7 +77,7 @@ export default {
     width: 85vw;
     height: 8vh;
     border-radius: 15px;
-    background-color: rgb(33,84,131);
+    background-color: rgb(33 84 131 / 82%);
     /* position: absolute; */
     /* top: 14vh;
     left: 26vw; */
@@ -129,7 +129,7 @@ h3 {
 }
 
 .asteroid2 {
-    width: 75%;
+  width: 61%;
     height: 35%;
     background-image: url(@/assets/mymedia/adultAsteroid.png);
     background-repeat: no-repeat;

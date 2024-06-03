@@ -65,7 +65,7 @@ export default {
     width: 90vw;
     height: 8vh;
     border-radius: 15px;
-    background-color: rgb(33, 84, 131);
+    background-color: rgb(33 84 131 / 82%);
     position: absolute;
     top: 14vh;
     left: 12vw;
