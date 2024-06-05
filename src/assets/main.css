@@ -1,15 +1,10 @@
 html,
 body {
     margin: 0;
-    height: 90vh;
+    height: 100%;
     font-family: assistantBold;
+    overflow: hidden !important;
 }
-
-/* body { */
-/* background-image: url(@/assets/mymedia/background.png); */
-/* background-size: 100% 100%; */
-/* background-repeat: no-repeat; */
-/* } */
 
 @font-face {
     font-family: assistantBold;
@@ -25,7 +20,6 @@ body {
     font-family: assistantLight;
     src: url(@/assets/fonts/Assistant-Light.ttf);
 }
-
 
 /* twinkling stars background: */
 
@@ -107,3 +101,10 @@ body {
     animation: move-background 25s linear infinite;
 
 }
+
+@media (min-width: 768px) {
+    /* העיצוב שאתה רוצה להסתיר */
+    body {
+      display: none;
+    }
+  }

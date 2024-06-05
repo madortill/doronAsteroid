@@ -6,7 +6,10 @@
             :style="{ left: asteroid.x + 'px', top: asteroid.y + 'px' }"></div>
 
         <div id="explosion" v-if="explosion"></div>
-        <div id="message" v-if="gameOverMessage"> {{ `Game Over! Your score: ${this.score}` }} 
+        <!-- <div id="message" v-if="gameOverMessage"> {{ `Game Over! Your score: ${this.score}` }}  -->
+            <div id="message" v-if="gameOverMessage"> {{ `  המשחק נגמר! 
+                ציונך הוא: ${this.score}` }} 
+
         <button @click="startGame">שחק שוב</button>
         </div>
         <div id="next-button" v-if="gameOverMessage" @click="next">לסיום הלומדה</div>
@@ -167,7 +170,7 @@ export default {
     z-index: 5;
 }
 
-#message {
+/* #message {
     width: 55%;
     height: 30%;
     background-color: rgb(200, 215, 248);
@@ -183,13 +186,29 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+} */
+
+#message {
+    color: rgb(91, 110, 134);
+    font-size: 10vw;
+    direction: rtl;
+    /* text-shadow: 4px 3px #000000; */
+    text-align: center;
+    line-height: 4rem;
+    padding: 20%;
+    -webkit-text-stroke: 0.5px white;
+    margin-top: 15%;
 }
 
 button {
     border: none;
-    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+    background-color: rgb(91, 110, 134);
+    color: white;
+    -webkit-text-stroke: none;
+    font-size: 4vw;
     border-radius: 4px;
-    height: 10%;
+    height: 5vh;
+    width: 20vw;
 }
 
 #next-button {
@@ -204,7 +223,7 @@ button {
     font-size: large;
     position: absolute;
     top: 75%;
-    left: 25%;
+    left: 28%;
 }
 
 .on-click-animation {

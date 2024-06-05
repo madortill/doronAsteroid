@@ -119,7 +119,7 @@ export default {
 }
 
 .back {
-    transform: rotateX(-179deg);
+    transform: rotateX(-180deg);
 }
 
 .flip-card--x.flip .front {

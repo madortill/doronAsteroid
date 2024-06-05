@@ -13,9 +13,9 @@
 
         </div>
 
-        <img class="asteroid0" src="@/assets/mymedia/babyAsteroid.png" alt="asteroid0" >
-        <img class="asteroid1" src="@/assets/mymedia/teenAsteroid.png" alt="asteroid1" >
-        <img class="asteroid2" src="@/assets/mymedia/adultAsteroid.png" alt="asteroid2" >
+        <img class="asteroid0 animation" src="@/assets/mymedia/babyAsteroid.png" alt="asteroid0">
+        <img class="asteroid1 animation" src="@/assets/mymedia/teenAsteroid.png" alt="asteroid1">
+        <img class="asteroid2 animation" src="@/assets/mymedia/adultAsteroid.png" alt="asteroid2">
 
 
 
@@ -62,13 +62,13 @@ h1 {
 }
 
 .asteroid0 {
-    /* animation-duration: 1.5s; */
+    animation-duration: 1.5s;
     width: 45%;
     height: auto;
     position: absolute;
     top: 15%;
     left: 10%;
-    /* animation: floatAnimation 1.5s ease-in-out infinite; */
+
 }
 
 .asteroid1 {
@@ -77,8 +77,8 @@ h1 {
     position: absolute;
     top: 33%;
     right: -25%;
-    /* animation-duration: 2s; */
-    /* animation-direction: reverse; */
+    animation-duration: 2s;
+    animation-direction: reverse;
 }
 
 .asteroid2 {
@@ -87,6 +87,27 @@ h1 {
     position: absolute;
     top: 55%;
     left: -20%;
-    /* animation-duration: 3s; */
+    animation-duration: 3s;
+}
+
+.animation {
+    animation-name: floatAnimation;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 </style>

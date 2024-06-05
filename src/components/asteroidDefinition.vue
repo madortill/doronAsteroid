@@ -38,7 +38,6 @@ export default {
 
 
 <style scoped>
-
 #definition-title {
     width: 90vw;
     height: 8vh;
