@@ -13,6 +13,8 @@
 
         </div>
 
+        <div id="go-to-start"  @click="toStart">לתחילת הלומדה</div>
+
         <img class="asteroid0 animation" src="@/assets/mymedia/babyAsteroid.png" alt="asteroid0">
         <img class="asteroid1 animation" src="@/assets/mymedia/teenAsteroid.png" alt="asteroid1">
         <img class="asteroid2 animation" src="@/assets/mymedia/adultAsteroid.png" alt="asteroid2">
@@ -31,7 +33,9 @@ export default {
         };
     },
     methods: {
-
+        toStart() {
+            this.$emit('to-start');
+        },
     },
 }
 
@@ -49,7 +53,6 @@ export default {
 .endmessage {
     direction: rtl;
     color: white;
-    /* text-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75); */
     text-shadow: 4px 3px #000000;
     text-align: center;
     margin-top: 30%;
@@ -66,7 +69,7 @@ h1 {
     width: 45%;
     height: auto;
     position: absolute;
-    top: 15%;
+    top: 10%;
     left: 10%;
 
 }
@@ -75,7 +78,7 @@ h1 {
     width: 70%;
     height: auto;
     position: absolute;
-    top: 33%;
+    top: 28%;
     right: -25%;
     animation-duration: 2s;
     animation-direction: reverse;
@@ -85,7 +88,7 @@ h1 {
     width: 80%;
     height: auto;
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: -20%;
     animation-duration: 3s;
 }
@@ -109,5 +112,21 @@ h1 {
     100% {
         transform: translateY(0);
     }
+}
+
+#go-to-start {
+    width: 40%;
+    height: 5%;
+    background-color: rgb(197, 90, 17);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    color: white;
+    line-height: 2rem;
+    text-align: center;
+    font-size: large;
+    position: absolute;
+    top: 90%;
+    left: 28%;
+    z-index: 4;
 }
 </style>

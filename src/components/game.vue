@@ -170,29 +170,10 @@ export default {
     z-index: 5;
 }
 
-/* #message {
-    width: 55%;
-    height: 30%;
-    background-color: rgb(200, 215, 248);
-    color: black;
-    position: absolute;
-    top: 25%;
-    left: 20%;
-    line-height: 5rem;
-    text-align: center;
-    font-size: x-large;
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
-
 #message {
     color: rgb(91, 110, 134);
     font-size: 10vw;
     direction: rtl;
-    /* text-shadow: 4px 3px #000000; */
     text-align: center;
     line-height: 4rem;
     padding: 20%;

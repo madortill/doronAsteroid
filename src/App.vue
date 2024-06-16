@@ -1,12 +1,15 @@
 <template>
 
-  <div class="wrapper" @click="fatherClicks++">
+  <div class="wrapper" >
+  <div class="forMedia"></div>
     <open-screen v-if ="page === 0" @next-page = "nextPage"></open-screen>
     <asteroid-definition v-if ="page === 1" @next-page = "nextPage"></asteroid-definition>
     <asteroid-types v-if ="page === 2" @next-page = "nextPage"></asteroid-types>
     <asteroid-explosion v-if ="page === 3" @next-page = "nextPage"></asteroid-explosion>
     <game v-if ="page === 4" @next-page = "nextPage"></game>
-    <end-screen v-if ="page >= 5" @next-page = "nextPage"></end-screen>
+    <end-screen v-if ="page >= 5" @to-start = "toStart"></end-screen>
+
+    
 
   </div>
 
@@ -42,12 +45,9 @@ export default {
     nextPage() {
       this.page++;
     },
-
-    // prevPage() {
-    //   this.page--;
-    // }, 
-
-
+    toStart() {
+      this.page = 0;
+    },
 
   },
   computed: {
@@ -118,4 +118,15 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 }
+
+@media (min-width: 768px) {
+    /* העיצוב שאתה רוצה להסתיר */
+    .forMedia {
+      background-color: black;
+      top: 0;
+      left: 0;
+      position: absolute;
+     
+    }
+  }
 </style>

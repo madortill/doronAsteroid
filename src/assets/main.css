@@ -21,6 +21,8 @@ body {
     src: url(@/assets/fonts/Assistant-Light.ttf);
 }
 
+ 
+
 /* twinkling stars background: */
 
 @keyframes move-background {
@@ -99,12 +101,19 @@ body {
     -o-animation: move-background 25s linear infinite;
     -webkit-animation: move-background 25s linear infinite;
     animation: move-background 25s linear infinite;
+}
 
+.forMedia {
+    display: none;
 }
 
 @media (min-width: 768px) {
     /* העיצוב שאתה רוצה להסתיר */
-    body {
-      display: none;
+    .forMedia {
+        display: block;
+      background-color: black;
+      width: 100vw;
+      height: 100vh;
+      z-index: 20 !important;
     }
   }
